@@ -32,6 +32,52 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Player trashTalker = new SmackTalkingPlayer()
+            {
+                    Name = "Sassy",
+                    Taunt = "You are weak"
+            };
+            trashTalker.Play(player1);
+            player1.Play(trashTalker);
+            Console.WriteLine("-----------------");
+
+            Console.WriteLine("-----------------");
+            Player alwaysHigher = new OneHigherPlayer();
+            alwaysHigher.Name = "winner";
+            alwaysHigher.Play(player3);
+            Console.WriteLine("-----------------");
+
+            Console.WriteLine("-----------------");
+            Player humanPlayer = new HumanPlayer();
+            humanPlayer.Name = "HUUUMAaan";
+            humanPlayer.Play(player3);
+            player3.Play(humanPlayer);
+            alwaysHigher.Play(humanPlayer);
+            Console.WriteLine("--------------");
+
+            Console.WriteLine("-----------------");
+            Player creative = new CreativeSmackTalkingPlayer();
+            creative.Name = "Mike";
+            creative.Play(player1);
+            Console.WriteLine("-----------------");
+
+            // Player soreLoser = new SoreLoserPlayer();
+            // soreLoser.Name = "Matt";
+            // Console.WriteLine("---------------------");
+            // soreLoser.Play(large);
+
+            Console.WriteLine("-----------------");
+            Player onlyHighRolls = new UpperHalfPlayer();
+            onlyHighRolls.Name = "Gambit";
+            onlyHighRolls.Play(creative);
+            Console.WriteLine("-----------------");
+
+            Console.WriteLine("-----------------");
+            Player soreLoserHighRoller = new SoreLoserUpperHalfPlayer();
+            soreLoserHighRoller.Name = "Johnny Carson";
+            soreLoserHighRoller.Play(creative);
+            Console.WriteLine("-----------------");
+
             List<Player> players = new List<Player>() {
                 player1, player2, player3, large
             };
